@@ -1,0 +1,7 @@
+baseURL = "https://neph-io.com/"
+title = "Mon site"
+theme = "re-terminal"
+
+[params]
+  defaultTheme = "auto"
+  ShowReadingTime = true
