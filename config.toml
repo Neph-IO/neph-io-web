@@ -11,7 +11,7 @@ pagination.pagerSize = 5
   contentTypeName = "posts"
 
   # ["orange", "blue", "red", "green", "pink", "paper"]
-  themeColor = "orange"
+  themeColor = "blue"
 
   # if you set this to 0, only submenu trigger will be visible
   showMenuItems = 2
@@ -23,7 +23,7 @@ pagination.pagerSize = 5
   fullWidthTheme = false
 
   # center theme with default width
-  centerTheme = True
+  centerTheme = true
 
   # if your resource directory contains an image called `cover.(jpg|png|webp)`,
   # then the file will be used as a cover automatically.
