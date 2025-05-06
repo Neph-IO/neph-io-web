@@ -1,4 +1,4 @@
-baseURL = "https://neph-io.com/"
+baseURL = "https://neph-io-web.pages.dev/"
 title = "Mon site"
 theme = "re-terminal"
 
