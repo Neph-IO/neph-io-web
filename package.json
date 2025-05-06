@@ -1,0 +1,13 @@
+{
+    "name": "neph-io-web",
+    "version": "1.0.0",
+    "scripts": {
+      "build": "npm run postcss && hugo --minify",
+      "postcss": "postcss themes/re-terminal/assets/css/style.scss -o themes/re-terminal/assets/css/main.css"
+    },
+    "devDependencies": {
+      "postcss": "^8.4.16",
+      "postcss-cli": "^9.1.0"
+    }
+  }
+  
