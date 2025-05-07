@@ -1,0 +1,14 @@
+{{ define "main" }}
+  <h1>Mes projets</h1>
+  <div class="project-list">
+    {{ range .Pages }}
+      <div class="project-item">
+        <a href="{{ .Permalink }}">
+          <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
+          <h2>{{ .Title }}</h2>
+          <p>{{ .Summary }}</p>
+        </a>
+      </div>
+    {{ end }}
+  </div>
+{{ end }}
