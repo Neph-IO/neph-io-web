@@ -2,17 +2,13 @@
   <h1>Mes projets</h1>
   <div class="project-list">
     {{ range .Pages }}
-      <div class="project-item">
-        <a href="{{ .Permalink }}">
-          <div class="project-thumb">
-            <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
-          </div>
-          <div class="project-info">
-            <h2>{{ .Title }}</h2>
-            <p>{{ .Summary }}</p>
-          </div>
-        </a>
-      </div>
+      <a class="project-item" href="{{ .Permalink }}">
+        <img class="project-thumb" src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
+        <div>
+          <h2>{{ .Title }}</h2>
+          <p>{{ .Summary }}</p>
+        </div>
+      </a>
     {{ end }}
   </div>
 {{ end }}
