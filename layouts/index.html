@@ -1,47 +1,4 @@
 {{ define "main" }}
- <section class="boot-screen">
-<div class="boot-header">== SYSTEM BOOT INITIALIZED ==</div>
-<div class="boot-line">> Launch sequence ready...</div>
-<div class="boot-links">
-<a href="/projects">[ Projects ]</a>
-<a href="/portfolio">[ Portfolio ]</a>
-<a href="/posts">[ Writing ]</a>
-</div>
-<div class="boot-line">> Diagnostics: <span class="ok">OK</span></div>
-<div class="boot-line">> Atmospheric Pressure: Stable</div>
-</section>
-<style>
-.boot-screen {
-font-family: monospace;
-color: #8aff8a;
-background-color: #0a0a0a48;
-padding: 3rem;
-min-height: 80vh;
-animation: flicker 0.2s infinite alternate;
- }
-.boot-header {
-font-size: 1.8rem;
-margin-bottom: 2rem;
- }
-.boot-line {
-margin: 1rem 0;
- }
-.boot-links a {
-margin-right: 1rem;
-text-decoration: none;
-color: #8aff8a;
-transition: all 0.2s ease;
- }
-.boot-links a:hover {
-color: #fff;
-text-shadow: 0 0 5px #8aff8a;
- }
-.ok {
-color: #aaffaa;
- }
-@keyframes flicker {
-from { opacity: 1; }
-to { opacity: 0.98; }
- }
-</style>
+  <h1>Page d'Accueil Personnalisée</h1>
+  <p>Ceci est la page d'accueil personnalisée avec uniquement le contenu que je veux afficher !</p>
 {{ end }}
