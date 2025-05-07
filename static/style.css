@@ -5,12 +5,23 @@
     margin-top: 2rem;
   }
   
-  .project-item img {
+  .project-list img {
     width: 100%;
+    max-height: 200px;
+    object-fit: cover;
     border-radius: 8px;
   }
+  
   
   .project-item h2 {
     margin: 0.5em 0 0.2em;
   }
   
+
+  .project-item {
+    transition: transform 0.2s ease;
+  }
+  
+  .project-item:hover {
+    transform: scale(1.02);
+  }
