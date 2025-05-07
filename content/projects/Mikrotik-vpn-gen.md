@@ -1,7 +1,7 @@
 ---
 title: "Mon premier projet"
 date: 2024-05-01
-thumbnail: "/img/projects/projet1-thumb.jpg"
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Banana_on_black_background.jpg/1200px-Banana_on_black_background.jpg"
 summary: "Petit projet cool avec Hugo"
 ---
 
