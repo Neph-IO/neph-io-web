@@ -1,0 +1,37 @@
+$accent: #a7c080;
+$background: #2b3339;
+$color: #d3c6aa;
+$menu-color: #d3c6aa;
+$border-color: rgba(255, 255, 255, 0.1);
+$header-bg: $background;
+$header-fg: $color;
+
+:root {
+  --accent: #{$accent};
+  --accent-contrast-color: black;
+  --article-link-color: var(--accent);
+  --background: #{$background};
+  --border-color: #{$border-color};
+  --color: #{$color};
+  --menu-color: #{$menu-color};
+
+  --syntax-func-color: color-mix(in srgb, var(--accent) 70%, #999 30%);
+  --syntax-var-color: color-mix(in srgb, var(--accent) 90%, transparent);
+  --syntax-punctuation-color: #d3c6aa;
+  --syntax-value-color: color-mix(in srgb, var(--accent), white);
+  --syntax-comment-color: rgba(255, 255, 255, 0.3);
+
+  --header-bg: #{$header-bg};
+  --header-fg: #{$header-fg};
+  --card-bg: #2f383e;
+  --card-fg: #d3c6aa;
+
+
+:root {
+    --color: #{$color};
+    --card-fg: #{$color};
+    --menu-color: #{$color};
+    --foreground: #{$color};
+    --header-fg: #{$color};
+  }
+}

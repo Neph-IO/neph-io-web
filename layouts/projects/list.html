@@ -3,7 +3,14 @@
   <div class="project-list">
     {{ range .Pages }}
       <a class="project-item" href="{{ .Permalink }}">
-        <img class="project-thumb" src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
+        {{ $thumb := .Params.thumbnail }}
+        {{ if hasPrefix $thumb "http" }}
+          <img class="project-thumb" src="{{ $thumb }}" alt="{{ .Title }}">
+        {{ else }}
+          {{ with .Resources.GetMatch $thumb }}
+            <img class="project-thumb" src="{{ .RelPermalink }}" alt="{{ $.Title }}">
+          {{ end }}
+        {{ end }}
         <div>
           <h2>{{ .Title }}</h2>
           <p>{{ .Summary }}</p>

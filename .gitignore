@@ -10,3 +10,4 @@ Thumbs.db
 *.swo
 .idea/
 .vscode/
+.hugo_build.lock

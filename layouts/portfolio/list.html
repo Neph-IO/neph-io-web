@@ -1,0 +1,21 @@
+{{ define "main" }}
+  <h1>Portfolio</h1>
+
+  <div class="portfolio-grid">
+    {{ range .Pages }}
+    <div class="portfolio-item">
+      <div class="portfolio-img-wrapper"
+           onclick="openLightbox('{{ .Params.image }}', {{ .Params.caption | jsonify }})">
+        <img src="{{ .Params.image }}" alt="{{ .Title }}">
+        <div class="portfolio-caption">{{ .Params.caption }}</div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+
+  <!-- Lightbox container -->
+  <div id="lightbox" onclick="closeLightbox(event)">
+    <img id="lightbox-img" src="" alt="">
+    <div id="lightbox-caption"></div>
+  </div>
+{{ end }}

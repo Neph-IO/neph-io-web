@@ -1,0 +1,21 @@
+{{ define "main" }}
+  <h1>Here, I share thoughts, reflections, and poetry</h1>
+  <div class="project-list">
+    {{ range .Pages }}
+      <a class="project-item" href="{{ .Permalink }}">
+        {{ $thumb := .Params.thumbnail }}
+        {{ if hasPrefix $thumb "http" }}
+          <img class="project-thumb" src="{{ $thumb }}" alt="{{ .Title }}">
+        {{ else }}
+          {{ with .Resources.GetMatch $thumb }}
+            <img class="project-thumb" src="{{ .RelPermalink }}" alt="{{ $.Title }}">
+          {{ end }}
+        {{ end }}
+        <div>
+          <h2>{{ .Title }}</h2>
+          <p>{{ .Summary }}</p>
+        </div>
+      </a>
+    {{ end }}
+  </div>
+{{ end }}
