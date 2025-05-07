@@ -4,9 +4,13 @@
     {{ range .Pages }}
       <div class="project-item">
         <a href="{{ .Permalink }}">
-          <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
-          <h2>{{ .Title }}</h2>
-          <p>{{ .Summary }}</p>
+          <div class="project-thumb">
+            <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
+          </div>
+          <div class="project-info">
+            <h2>{{ .Title }}</h2>
+            <p>{{ .Summary }}</p>
+          </div>
         </a>
       </div>
     {{ end }}
