@@ -80,8 +80,8 @@ main, .main, .content {
   left: 50%;
   transform: translateX(-50%);
   column-count: 4;
-  column-gap: 0;
-  width: 60vw;
+  column-gap: 10px;/* Espacement HORIZONTAL*/
+  width: 70vw;
   margin-top: 2rem;
 }
 
@@ -95,8 +95,9 @@ main, .main, .content {
 
 .portfolio-item {
   break-inside: avoid;
-  margin: 0;
+  margin: 0px; 
   padding: 0;
+  margin-bottom: 10px;/* Espacement VERTICAL*/
 }
 
 .portfolio-item:hover img {
@@ -126,6 +127,29 @@ main, .main, .content {
   color: #d3c6aa;
   font-size: 0.95rem;
   max-width: 90%;
+}
+
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  user-select: none;
+  padding: 0 10px;
+}
+
+.lightbox-nav.left {
+  left: 10px;
+}
+
+.lightbox-nav.right {
+  right: 10px;
 }
 
 .lightbox-text {

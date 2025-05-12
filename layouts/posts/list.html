@@ -5,10 +5,11 @@
       <a class="project-item" href="{{ .Permalink }}">
         {{ $thumb := .Params.thumbnail }}
         {{ if hasPrefix $thumb "http" }}
-          <img class="project-thumb" src="{{ $thumb }}" alt="{{ .Title }}">
+          <img class="project-thumb" src="{{ $thumb }}" alt="{{ .Title }}" loading="lazy">
         {{ else }}
           {{ with .Resources.GetMatch $thumb }}
-            <img class="project-thumb" src="{{ .RelPermalink }}" alt="{{ $.Title }}">
+            {{ $thumbWebp := .Resize "600x webp" }} <!-- Redimensionne à 600px et convertit en WebP -->
+            <img class="project-thumb" src="{{ $thumbWebp.RelPermalink }}" alt="{{ $.Title }}" loading="lazy">
           {{ end }}
         {{ end }}
         <div>
