@@ -36,21 +36,29 @@ function updateLightbox() {
   const title = img.alt;
   const caption = item.getAttribute("data-caption") || "";
 
-  // Affiche le loader
-  document.getElementById("lightbox-loader").style.display = "block";
+  // Réinitialise l’état
   lightboxImg.style.display = "none";
-  lightboxImg.src = ""; // force rechargement
+  document.getElementById("lightbox-loader").style.display = "block";
+  lightboxCaption.classList.remove("visible");
+  lightboxCaption.innerHTML = ""; // vide pendant le chargement
 
-  // Attendre le chargement
+  // Chargement de l'image
   lightboxImg.onload = () => {
     document.getElementById("lightbox-loader").style.display = "none";
     lightboxImg.style.display = "block";
+    lightboxCaption.innerHTML = `<strong>${title}</strong><br>${caption}`;
+    // Forcer un léger délai pour assurer la transition
+    setTimeout(() => {
+      lightboxCaption.classList.add("visible");
+    }, 30);
   };
 
-  // Déclenche le chargement
+  // Forcer le rechargement même si c’est la même image
+  lightboxImg.src = "";
   lightboxImg.src = fullSrc;
-  lightboxCaption.innerHTML = `<strong>${title}</strong><br>${caption}`;
 }
+
+
 
 
 document.addEventListener("keydown", function (e) {

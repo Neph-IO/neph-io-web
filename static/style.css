@@ -115,6 +115,15 @@ main, .main, .content {
   z-index: 9999;
   padding: 1rem;
 }
+#lightbox-caption {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: block; /* important pour éviter qu’il soit masqué */
+}
+
+#lightbox-caption.visible {
+  opacity: 1;
+}
 
 #lightbox img {
   max-width: 90%;
@@ -171,6 +180,8 @@ main, .main, .content {
 .lightbox-text {
   text-align: left;
 }
+
+
 
 
 
