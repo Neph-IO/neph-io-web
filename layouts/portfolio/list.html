@@ -27,8 +27,15 @@
 <!-- Lightbox -->
 <div id="lightbox" onclick="closeLightbox(event)">
   <button id="prevBtn" class="lightbox-nav left" onclick="prevImage(event)">&#10094;</button>
-  <img id="lightbox-img" src="" alt="">
+
+  <!-- Spinner -->
+  <div id="lightbox-loader" class="spinner" style="display: none;"></div>
+
+  <!-- Image à charger dynamiquement -->
+  <img id="lightbox-img" src="" alt="" style="display: none;">
+
   <button id="nextBtn" class="lightbox-nav right" onclick="nextImage(event)">&#10095;</button>
+
   <div id="lightbox-caption"></div>
 </div>
 {{ end }}

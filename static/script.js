@@ -36,9 +36,22 @@ function updateLightbox() {
   const title = img.alt;
   const caption = item.getAttribute("data-caption") || "";
 
+  // Affiche le loader
+  document.getElementById("lightbox-loader").style.display = "block";
+  lightboxImg.style.display = "none";
+  lightboxImg.src = ""; // force rechargement
+
+  // Attendre le chargement
+  lightboxImg.onload = () => {
+    document.getElementById("lightbox-loader").style.display = "none";
+    lightboxImg.style.display = "block";
+  };
+
+  // Déclenche le chargement
   lightboxImg.src = fullSrc;
   lightboxCaption.innerHTML = `<strong>${title}</strong><br>${caption}`;
 }
+
 
 document.addEventListener("keydown", function (e) {
   if (lightbox.style.display === "flex") {
