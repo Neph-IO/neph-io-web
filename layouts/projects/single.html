@@ -1,5 +1,8 @@
 {{ define "main" }}
 <article class="post">
+  {{ if .Params.thumbnail }}
+  <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}" class="project-full-thumb">
+{{ end }}
   <h1 class="post-title">
     <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
   </h1>
@@ -39,9 +42,7 @@
       {{ .TableOfContents }}
     </div>
   {{ end }}
-  {{ if .Params.thumbnail }}
-  <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}" class="project-full-thumb">
-{{ end }}
+
 
   <div class="post-content">
     {{- with .Content -}}

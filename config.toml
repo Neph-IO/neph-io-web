@@ -63,6 +63,10 @@ pagination.pagerSize = 5
   # url = "https://github.com/mirus-ua/hugo-theme-re-terminal"
 
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [params.twitter]
   # set Twitter handles for Twitter cards
