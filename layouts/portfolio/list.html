@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <h1>Portfolio</h1>
+  <h1>Photography</h1>
 
   <div class="portfolio-grid">
     {{ range .Pages }}
@@ -7,11 +7,12 @@
       {{ $image := .Params.image }}
       {{ $title := .Title | htmlEscape | safeJS }}
       {{ $caption := .Params.caption | htmlEscape | safeJS }}
+
       {{ with .Resources.GetMatch $image }}
-        {{ $thumb := .Resize "600x" }}
+        {{ $webp := .Resize "600x webp" }}
         <div class="portfolio-img-wrapper"
              onclick="openLightbox('{{ .RelPermalink }}', '{{ $title }}', '{{ $caption }}')">
-          <img src="{{ $thumb.RelPermalink }}" alt="{{ $.Title }}">
+          <img src="{{ $webp.RelPermalink }}" alt="{{ $.Title }}">
           <div class="portfolio-caption">
             <div class="caption-title">{{ $.Title }}</div>
           </div>
