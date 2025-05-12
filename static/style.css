@@ -125,8 +125,11 @@ main, .main, .content {
 #lightbox-caption {
   color: #d3c6aa;
   font-size: 0.95rem;
-  text-align: center;
   max-width: 90%;
+}
+
+.lightbox-text {
+  text-align: left;
 }
 
 .portfolio-img-wrapper {

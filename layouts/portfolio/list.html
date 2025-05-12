@@ -4,16 +4,24 @@
   <div class="portfolio-grid">
     {{ range .Pages }}
     <div class="portfolio-item">
-      <div class="portfolio-img-wrapper"
-           onclick="openLightbox('{{ .Params.image }}', {{ .Params.caption | jsonify }})">
-        <img src="{{ .Params.image }}" alt="{{ .Title }}">
-        <div class="portfolio-caption">{{ .Params.caption }}</div>
-      </div>
+      {{ $image := .Params.image }}
+      {{ $title := .Title | htmlEscape | safeJS }}
+      {{ $caption := .Params.caption | htmlEscape | safeJS }}
+      {{ with .Resources.GetMatch $image }}
+        {{ $thumb := .Resize "600x" }}
+        <div class="portfolio-img-wrapper"
+             onclick="openLightbox('{{ .RelPermalink }}', '{{ $title }}', '{{ $caption }}')">
+          <img src="{{ $thumb.RelPermalink }}" alt="{{ $.Title }}">
+          <div class="portfolio-caption">
+            <div class="caption-title">{{ $.Title }}</div>
+          </div>
+        </div>
+      {{ end }}
     </div>
     {{ end }}
   </div>
 
-  <!-- Lightbox container -->
+  <!-- Lightbox -->
   <div id="lightbox" onclick="closeLightbox(event)">
     <img id="lightbox-img" src="" alt="">
     <div id="lightbox-caption"></div>
