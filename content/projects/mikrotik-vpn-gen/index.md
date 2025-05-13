@@ -1,6 +1,6 @@
 ---
 title: "Mikrotik VPN Generator"
-date: 2024-05-01
+date: 2025-05-01
 thumbnail: "cover.png"
 summary: "Simple VPN Creator for Mikrotik VPN"
 ---
