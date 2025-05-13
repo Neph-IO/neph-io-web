@@ -64,7 +64,8 @@ location /api/ {
 - **You must update the frontend's `<select>` dropdown to match your MikroTik profiles.**  
 
 Copy this line (247) as many times as needed:
- ```
+
+ ```html
 <option>OpenVpnProfile1</option>
 ```
 
