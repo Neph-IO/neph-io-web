@@ -15,7 +15,6 @@
     {{- with .Params.Author -}}
       <span class="post-author">{{ . }}</span>
     {{- end -}}
-    <!-- comments counter -->
     {{ partial "comments_counter.html" . }}
     {{- if and (.Param "readingTime") (eq (.Param "readingTime") true) -}}
       <span class="post-reading-time">{{ .ReadingTime }} {{ $.Site.Params.minuteReadingTime | default "min read" }} ({{ .WordCount }} {{ $.Site.Params.words | default "words" }})</span>
@@ -39,18 +38,22 @@
       {{ .TableOfContents }}
     </div>
   {{ end }}
+
+  {{/* Gestion de thumbpage */}}
   {{ $thumb := .Params.thumbnail }}
-  {{ if hasPrefix $thumb "http" }}
-    <img src="{{ $thumb }}" alt="{{ .Title }}" class="project-full-thumb">
-  {{ else }}
-    {{ if not $thumb }}
-      {{ with .Resources.GetMatch "cover*" }}
-        <img src="{{ .RelPermalink }}" alt="{{ $.Title }}" class="project-full-thumb">
-      {{ end }}
+  {{ $showThumb := .Params.thumbpage | default true }}
+
+  {{ if and $showThumb $thumb }}
+    {{ if hasPrefix $thumb "http" }}
+      <img src="{{ $thumb }}" alt="{{ .Title }}" class="project-full-thumb">
     {{ else }}
       {{ with .Resources.GetMatch $thumb }}
         <img src="{{ .RelPermalink }}" alt="{{ $.Title }}" class="project-full-thumb">
       {{ end }}
+    {{ end }}
+  {{ else if and $showThumb (not $thumb) }}
+    {{ with .Resources.GetMatch "cover*" }}
+      <img src="{{ .RelPermalink }}" alt="{{ $.Title }}" class="project-full-thumb">
     {{ end }}
   {{ end }}
 

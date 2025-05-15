@@ -21,6 +21,7 @@ collections:
       - { label: "Titre", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Vignette", name: "thumbnail", widget: "image" }
+      - { label: "Thumb Visible", name: "thumbpage", widget: "boolean", default: true }
       - { label: "Résumé", name: "summary", widget: "text" }
 
   - name: "projects"
