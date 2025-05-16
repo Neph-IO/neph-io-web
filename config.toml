@@ -9,6 +9,8 @@ pagination.pagerSize = 5
   # dir name of your main content (default is `content/posts`).
   # the list of set content will show up on your index page (baseurl).
   contentTypeName = "index"
+  
+
 
   # ["orange", "blue", "red", "green", "pink", "paper"]
   themeColor = "everforest"
@@ -78,6 +80,7 @@ pagination.pagerSize = 5
 [languages]
   [languages.en.params]
     languageName = "English"
+    timeZone = "Asia/Tokyo"
     title = "Neph-IO"
     subtitle = "A website for my Projects, Picture and thoughts"
     owner = "Nephereth"
