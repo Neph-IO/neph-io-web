@@ -19,7 +19,7 @@ collections:
     public_folder: ""
     fields:
       - { label: "Titre", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime",format: "YYYY-MM-DDTHH:mm:ss+09:00" }
+      - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Vignette", name: "thumbnail", widget: "image" }
       - { label: "Thumb Visible", name: "thumbpage", widget: "boolean", default: true }
       - { label: "Résumé", name: "summary", widget: "text" }
@@ -38,7 +38,7 @@ collections:
     public_folder: ""
     fields:
       - { label: "Titre", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime",format: "YYYY-MM-DDTHH:mm:ss+09:00" }
+      - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Vignette", name: "thumbnail", widget: "image" }
       - { label: "Résumé", name: "summary", widget: "text" }
       - { label: "Contenu", name: "body", widget: "markdown" }
@@ -56,7 +56,7 @@ collections:
     public_folder: ""
     fields:
       - { label: "Titre", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime",format: "YYYY-MM-DDTHH:mm:ss+09:00" }
+      - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Image (URL ou upload)", name: "image", widget: "image" }
       - { label: "Légende", name: "caption", widget: "string" }
 
@@ -72,7 +72,7 @@ collections:
     public_folder: ""
     fields:
       - { label: "Titre", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime",format: "YYYY-MM-DDTHH:mm:ss+09:00" }
+      - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Vignette", name: "thumbnail", widget: "image" }
       - { label: "Thumb Visible", name: "thumbpage", widget: "boolean", default: true }
       - { label: "Résumé", name: "summary", widget: "text" }
