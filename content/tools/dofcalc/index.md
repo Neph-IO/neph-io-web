@@ -1,6 +1,6 @@
 ---
 title: Depth of field
-date: 2025-05-16T17:18:00.000Z
+date: 2025-05-16T18:13:00.000Z
 thumbnail: https://whsdesignandphoto.weebly.com/uploads/2/4/5/2/24522864/published/5257650_2.jpg?1727707363
 thumbpage: true
 summary: Aimed at hyperfocal
