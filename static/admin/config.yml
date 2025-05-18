@@ -2,7 +2,7 @@ backend:
   name: github
   repo: neph-io/neph-io-web
   branch: main
-  base_url: auth.neph-io.com
+  base_url: https://auth.neph-io.com
 
 media_folder: ""
 public_folder: ""
