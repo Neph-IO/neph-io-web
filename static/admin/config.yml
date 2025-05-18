@@ -61,6 +61,24 @@ collections:
       - { label: "Image (URL ou upload)", name: "image", widget: "image" }
       - { label: "Légende", name: "caption", widget: "string" }
 
+  - name: "art"
+    label: "Art"
+    folder: "content/art"
+    create: true
+    slug: "{{slug}}"
+    path: "{{slug}}/index"
+    format: "frontmatter"
+    extension: "md"
+    media_folder: ""
+    public_folder: ""
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime",time_format: false, format: "YYYY-MM-DD" }
+      - { label: "Vignette", name: "thumbnail", widget: "image" }
+      - { label: "Thumb Visible", name: "thumbpage", widget: "boolean", default: true }
+      - { label: "Résumé", name: "summary", widget: "text" }
+      - { label: "Contenu", name: "body", widget: "markdown" }
+
   - name: "Tools"
     label: "Tools"
     folder: "content/tools"
@@ -78,20 +96,4 @@ collections:
       - { label: "Thumb Visible", name: "thumbpage", widget: "boolean", default: true }
       - { label: "Résumé", name: "summary", widget: "text" }
       - { label: "Contenu", name: "body", widget: "markdown" }
-  - name: "art"
-    label: "Articles"
-    folder: "content/art"
-    create: true
-    slug: "{{slug}}"
-    path: "{{slug}}/index"
-    format: "frontmatter"
-    extension: "md"
-    media_folder: ""
-    public_folder: ""
-    fields:
-      - { label: "Titre", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime",time_format: false, format: "YYYY-MM-DD" }
-      - { label: "Vignette", name: "thumbnail", widget: "image" }
-      - { label: "Thumb Visible", name: "thumbpage", widget: "boolean", default: true }
-      - { label: "Résumé", name: "summary", widget: "text" }
-      - { label: "Contenu", name: "body", widget: "markdown" }
+
