@@ -1,6 +1,6 @@
 ---
 title: Night facing mt Fuji
-date: 2025-05-19
+date: 2025-05-18
 thumbnail: fujisan.webp
 thumbpage: false
 summary: First Pixel art.
