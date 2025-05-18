@@ -4,8 +4,8 @@ backend:
   branch: main
   base_url: https://auth.neph-io.com
 
-media_folder: ""
-public_folder: ""
+media_folder: "{{slug}}"
+public_folder: "{{slug}}"
 
 collections:
   - name: "posts"
