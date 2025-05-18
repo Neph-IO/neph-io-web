@@ -16,7 +16,7 @@ pagination.pagerSize = 5
   themeColor = "everforest"
 
   # if you set this to 0, only submenu trigger will be visible
-  showMenuItems = 4
+  showMenuItems = 5
 
   # show selector to switch language
   showLanguageSelector = false
@@ -128,6 +128,11 @@ pagination.pagerSize = 5
         identifier = "Tools"
         name = "Tools"
         url = "/tools"
+        weight = 5
+      [[languages.en.menu.main]]
+        identifier = "Art"
+        name = "Art"
+        url = "/art"
         weight = 4
 
 [module]
