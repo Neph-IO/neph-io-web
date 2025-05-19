@@ -250,7 +250,7 @@ article.post {
 }
 
 .post{
-  width: 50vw;
+  width: 50vw!important;
   text-align: justify;
 }
 @media (max-width: 768px) {
