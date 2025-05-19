@@ -247,7 +247,11 @@ article.post {
   /* width: 80vw;  ou ce que tu veux */
   left: 50%;
   transform: translateX(-50%);
+}
+
+.post{
   width: 50vw;
+  text-align: justify;
 }
 @media (max-width: 768px) {
   article.post {
