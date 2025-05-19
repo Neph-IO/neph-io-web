@@ -49,7 +49,7 @@
 /*  Override of colors idk i had to do that*/
 body {
   position: relative;
-  background-color: var(--background);
+  background-color: #1d1e28;
   color: #d3c6aa !important;
 }
 
@@ -240,13 +240,14 @@ article.post {
   background-color: var(--background) !important;
   padding: 2rem;
   margin: 2rem auto;
-  border: 1px solid var(--border-color);
+  /* border: 1px solid var(--border-color);*/
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   position: relative;
   z-index: 1;
   /* width: 80vw;  ou ce que tu veux */
   left: 50%;
   transform: translateX(-50%);
+  width: 50vw;
 }
 @media (max-width: 768px) {
   article.post {
@@ -260,7 +261,7 @@ article.post {
 /* Si tu veux aussi isoler la zone de contenu à l’intérieur */
 .post-content {
   background-color: var(--background) !important;
-  padding: 1rem;
+  padding: 6rem;
   border-radius: 4px;
 }
 
