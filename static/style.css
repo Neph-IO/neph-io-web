@@ -330,3 +330,9 @@ img {
     border-radius: 0;
   }
 }
+
+.menu__dropdown {
+
+	color: var(--accent);
+
+}
