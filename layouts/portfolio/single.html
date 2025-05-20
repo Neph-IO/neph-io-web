@@ -1,0 +1,57 @@
+{{ define "main" }}
+<article class="post">
+  <h1 class="post-title">
+    <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+  </h1>
+
+  <div class="post-meta">
+    {{- if .Date -}}
+      <time class="post-date">{{ .Date.Format "2006-01-02" }}</time>
+    {{- end }}
+  </div>
+
+  {{ with .Params.image }}
+    <div style="position: relative; left: 50%; transform: translateX(-50%); width: fit-content; margin: 1.5rem 0;">
+      {{ if hasPrefix . "http" }}
+        <img src="{{ . }}" alt="{{ $.Title }}" style="
+          display: block;
+          height: 100vh;
+          width: auto;
+          max-width: 100%;
+          object-fit: contain;
+        ">
+      {{ else }}
+        {{ with $.Resources.GetMatch . }}
+          <img src="{{ .RelPermalink }}" alt="{{ $.Title }}" style="
+            display: block;
+            height: 100vh;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+          ">
+        {{ else }}
+          <img src="{{ . | relURL }}" alt="{{ $.Title }}" style="
+            display: block;
+            height: 100vh;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+          ">
+        {{ end }}
+      {{ end }}
+    </div>
+  {{ end }}
+
+  {{ with .Params.caption }}
+    <p class="post-caption" style="text-align: center; font-style: italic; ">{{ . }}</p>
+  {{ end }}
+
+  <div class="post-content">
+    {{- with .Content -}}
+      <div>
+        {{ . | safeHTML }}
+      </div>
+    {{- end -}}
+  </div>
+</article>
+{{ end }}
