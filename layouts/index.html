@@ -1,5 +1,19 @@
 {{ define "main" }}
 <style>
+  /* Ajout d'une marge top pour le terminal sur petit écran */
+@media (max-width: 684px) {
+  .terminal {
+    margin-top: 30px!important; /* Ajoute de l'espace en haut */
+  }
+}
+
+/* Encore plus d'espace sur très petit écran */
+@media (max-width: 480px) {
+  .terminal {
+    margin-top: 50px!important; /* Augmente l'espace en haut */
+    height: 80vh!important; /* Option: augmente la hauteur pour compenser */
+  }
+}
 .terminal {
   width: 90%;
   max-width: 800px;
@@ -31,6 +45,8 @@
   pointer-events: none;
   z-index: 10;
 }
+
+
 
 /* Ligne de scan */
 .terminal:after {
