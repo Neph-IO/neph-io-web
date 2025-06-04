@@ -1,37 +1,39 @@
 {{ define "main" }}
 <h1>Photography</h1>
 <div class="portfolio-grid">
- {{ range $index, $page := .Pages.ByDate.Reverse }}
-   {{ $image := $page.Params.image }}
-   {{ $title := $page.Params.title | htmlEscape | safeJS }}
-   {{ $caption := $page.Params.caption | htmlEscape | safeJS }}
-   {{ with $page.Resources.GetMatch $image }}
-     {{ $img := . }}
-     {{ $img = $img.Filter (images.AutoOrient) }}
-     {{ $thumb := $img.Resize "600x webp" }}
-     
-     <div class="portfolio-item">
-       <div class="portfolio-img-wrapper"
-            data-caption="{{ $caption }}"
-            data-full="{{ $img.RelPermalink }}"
-            onclick="openLightbox({{ $index }})">
-         <img src="{{ $thumb.RelPermalink }}" alt="{{ $title }}" loading="lazy">
-         <div class="portfolio-caption">
-           <div class="caption-title">{{ $title }}</div>
-         </div>
-       </div>
-     </div>
-   {{ end }}
- {{ end }}
+  {{ range $index, $page := .Pages.ByDate.Reverse }}
+    {{ $image := $page.Params.image }}
+    {{ $title := $page.Params.title | plainify }}
+    {{ $caption := $page.Params.caption | html }}
+    {{ with $page.Resources.GetMatch $image }}
+      {{ $img := . }}
+      {{ $img = $img.Filter (images.AutoOrient) }}
+      {{ $thumb := $img.Resize "600x webp" }}
+      
+      <div class="portfolio-item">
+        <div class="portfolio-img-wrapper"
+             data-caption="{{ $caption }}"
+             data-full="{{ $img.RelPermalink }}"
+             data-url="{{ $page.RelPermalink }}"
+             onclick="openLightbox({{ $index }})">
+          <img src="{{ $thumb.RelPermalink }}" alt="{{ $title }}" title="{{ $title }}" loading="lazy">
+          <div class="portfolio-caption">
+            <div class="caption-title">{{ $title }}</div>
+          </div>
+        </div>
+      </div>
+    {{ end }}
+  {{ end }}
 </div>
 
 <!-- Lightbox -->
 <div id="lightbox" onclick="closeLightbox(event)">
- <button id="prevBtn" class="lightbox-nav left" onclick="prevImage(event)">&#10094;</button>
- <div id="lightbox-loader" class="spinner" style="display: none;"></div>
- <img id="lightbox-img" src="" alt="" style="display: none;">
- <button id="nextBtn" class="lightbox-nav right" onclick="nextImage(event)">&#10095;</button>
- <div id="lightbox-caption"></div>
+  <button id="closeBtn" class="lightbox-close" onclick="closeLightbox(event)">×</button>
+  <button id="prevBtn" class="lightbox-nav left" onclick="prevImage(event)">&#10094;</button>
+  <div id="lightbox-loader" class="spinner" style="display: none;"></div>
+  <img id="lightbox-img" src="" alt="" style="display: none;" onclick="window.location.href = portfolioItems[currentIndex].dataset.url;">
+  <button id="nextBtn" class="lightbox-nav right" onclick="nextImage(event)">&#10095;</button>
+  <div id="lightbox-caption" class="lightbox-text"></div>
 </div>
 
 <!-- Masonry.js -->
@@ -39,17 +41,16 @@
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
- var grid = document.querySelector('.portfolio-grid');
- 
- imagesLoaded(grid, function() {
-   var msnry = new Masonry(grid, {
-     itemSelector: '.portfolio-item',
-     columnWidth: '.portfolio-item',
-     percentPosition: true,
-     gutter: 10,
-     horizontalOrder: true,
-   });
- });
+  var grid = document.querySelector('.portfolio-grid');
+  imagesLoaded(grid, function() {
+    var msnry = new Masonry(grid, {
+      itemSelector: '.portfolio-item',
+      columnWidth: '.portfolio-item',
+      percentPosition: true,
+      gutter: 10,
+      horizontalOrder: true,
+    });
+  });
 });
 </script>
 {{ end }}
