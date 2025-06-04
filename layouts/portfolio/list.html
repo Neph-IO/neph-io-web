@@ -1,55 +1,117 @@
 {{ define "main" }}
 <h1>Photography</h1>
 <div class="portfolio-grid">
- {{ range $index, $page := .Pages.ByDate.Reverse }}
-   {{ $image := $page.Params.image }}
-   {{ $title := $page.Params.title | htmlEscape | safeJS }}
-   {{ $caption := $page.Params.caption | htmlEscape | safeJS }}
-   {{ with $page.Resources.GetMatch $image }}
-     {{ $img := . }}
-     {{ $img = $img.Filter (images.AutoOrient) }}
-     {{ $thumb := $img.Resize "600x webp" }}
-     
-     <div class="portfolio-item">
-       <div class="portfolio-img-wrapper"
-            data-caption="{{ $caption }}"
-            data-full="{{ $img.RelPermalink }}"
-            onclick="openLightbox({{ $index }})">
-         <img src="{{ $thumb.RelPermalink }}" alt="{{ $title }}" loading="lazy">
-         <div class="portfolio-caption">
-           <div class="caption-title">{{ $title }}</div>
-         </div>
-       </div>
-     </div>
-   {{ end }}
- {{ end }}
+  {{ range $index, $page := .Pages.ByDate.Reverse }}
+    {{ $image := $page.Params.image }}
+    {{ $title := $page.Params.title | htmlEscape | safeJS }}
+    {{ $caption := $page.Params.caption }}
+    {{ with $page.Resources.GetMatch $image }}
+      {{ $img := . }}
+      {{ $img = $img.Filter (images.AutoOrient) }}
+      {{ $thumb := $img.Resize "600x webp" }}
+      
+      <div class="portfolio-item">
+        <div class="portfolio-img-wrapper"
+             data-caption="{{ $caption | html }}"
+             data-full="{{ $img.RelPermalink }}"
+             data-url="{{ $page.RelPermalink }}"
+             onclick="openLightbox({{ $index }})">
+          <img src="{{ $thumb.RelPermalink }}" alt="{{ $title }}" loading="lazy">
+          <div class="portfolio-caption">
+            <div class="caption-title">{{ $title }}</div>
+          </div>
+        </div>
+      </div>
+    {{ end }}
+  {{ end }}
 </div>
 
 <!-- Lightbox -->
 <div id="lightbox" onclick="closeLightbox(event)">
- <button id="prevBtn" class="lightbox-nav left" onclick="prevImage(event)">&#10094;</button>
- <div id="lightbox-loader" class="spinner" style="display: none;"></div>
- <img id="lightbox-img" src="" alt="" style="display: none;">
- <button id="nextBtn" class="lightbox-nav right" onclick="nextImage(event)">&#10095;</button>
- <div id="lightbox-caption"></div>
+  <button id="closeBtn" class="lightbox-close" onclick="closeLightbox(event)">×</button>
+  <button id="prevBtn" class="lightbox-nav left" onclick="prevImage(event)">&#10094;</button>
+  <div id="lightbox-loader" class="spinner" style="display: none;"></div>
+  <img id="lightbox-img" src="" alt="" style="display: none;" onclick="goToPost()">
+  <button id="nextBtn" class="lightbox-nav right" onclick="nextImage(event)">&#10095;</button>
+  <div id="lightbox-caption"></div>
 </div>
 
-<!-- Masonry.js -->
+<!-- Scripts -->
 <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
- var grid = document.querySelector('.portfolio-grid');
- 
- imagesLoaded(grid, function() {
-   var msnry = new Masonry(grid, {
-     itemSelector: '.portfolio-item',
-     columnWidth: '.portfolio-item',
-     percentPosition: true,
-     gutter: 10,
-     horizontalOrder: true,
-   });
- });
+  const grid = document.querySelector('.portfolio-grid');
+  imagesLoaded(grid, function() {
+    new Masonry(grid, {
+      itemSelector: '.portfolio-item',
+      columnWidth: '.portfolio-item',
+      percentPosition: true,
+      gutter: 10,
+      horizontalOrder: true,
+    });
+  });
 });
+
+let currentIndex = -1;
+let currentUrl = "#";
+
+function openLightbox(index) {
+  const items = document.querySelectorAll('.portfolio-img-wrapper');
+  const item = items[index];
+  const fullImg = item.getAttribute('data-full');
+  const caption = item.getAttribute('data-caption');
+  const url = item.getAttribute('data-url');
+
+  const img = document.getElementById('lightbox-img');
+  const captionDiv = document.getElementById('lightbox-caption');
+
+  img.src = fullImg;
+  img.style.display = 'block';
+  captionDiv.innerHTML = caption;
+  captionDiv.classList.add('visible');
+
+  document.getElementById('lightbox').style.display = 'flex';
+  currentIndex = index;
+  currentUrl = url;
+}
+
+function closeLightbox(event) {
+  const img = document.getElementById("lightbox-img");
+  const captionDiv = document.getElementById("lightbox-caption");
+
+  if (
+    event.target === img ||
+    event.target.closest('.lightbox-nav') ||
+    event.target.closest('#closeBtn')
+  ) return;
+
+  document.getElementById("lightbox").style.display = "none";
+  img.style.display = "none";
+  img.src = "";
+  currentUrl = "#";
+  captionDiv.innerHTML = "";
+  captionDiv.classList.remove('visible');
+}
+
+function nextImage(event) {
+  event.stopPropagation();
+  const items = document.querySelectorAll('.portfolio-img-wrapper');
+  currentIndex = (currentIndex + 1) % items.length;
+  openLightbox(currentIndex);
+}
+
+function prevImage(event) {
+  event.stopPropagation();
+  const items = document.querySelectorAll('.portfolio-img-wrapper');
+  currentIndex = (currentIndex - 1 + items.length) % items.length;
+  openLightbox(currentIndex);
+}
+
+function goToPost() {
+  if (currentUrl && currentUrl !== "#") {
+    window.location.href = currentUrl;
+  }
+}
 </script>
 {{ end }}
