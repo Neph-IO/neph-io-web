@@ -12,7 +12,7 @@ function openLightbox(index) {
 }
 
 function closeLightbox(event) {
-  if (event.target.id === "lightbox") {
+  if (event.target.id === "lightbox" || event.target.id === "closeBtn") {
     lightbox.style.display = "none";
   }
 }
