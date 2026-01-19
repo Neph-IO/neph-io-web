@@ -16,7 +16,14 @@
              data-full="{{ $img.RelPermalink }}"
              data-url="{{ $page.RelPermalink }}"
              onclick="openLightbox({{ $index }})">
-          <img src="{{ $thumb.RelPermalink }}" alt="{{ $title }}" title="{{ $title }}" loading="lazy">
+          <img
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACw="
+            data-src="{{ $thumb.RelPermalink }}"
+            alt="{{ $title }}"
+            title="{{ $title }}"
+            width="{{ $thumb.Width }}"
+            height="{{ $thumb.Height }}"
+            loading="lazy">
           <div class="portfolio-caption">
             <div class="caption-title">{{ $title }}</div>
           </div>
@@ -39,18 +46,4 @@
 <!-- Masonry.js -->
 <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  var grid = document.querySelector('.portfolio-grid');
-  imagesLoaded(grid, function() {
-    var msnry = new Masonry(grid, {
-      itemSelector: '.portfolio-item',
-      columnWidth: '.portfolio-item',
-      percentPosition: true,
-      gutter: 10,
-      horizontalOrder: true,
-    });
-  });
-});
-</script>
 {{ end }}
