@@ -5,8 +5,6 @@ thumbnail: pexels-pixabay-256112.jpg
 summary: Concrete analysis on consumer grade hardware (no GPU & AMD APU)
 ---
 
-# Generation de réponse
-
 ### Hardware
 
 GMK-TEK EVO-X1 AI Mini
@@ -21,11 +19,11 @@ AMD Ryzen™ AI 9 HX 370 | Radeon 890M
 
 real bandwidth:
 
-7500 MT/s × 128 bits ÷ 8  
-= 7500 × 16 bytes  
-= 120 000 MB/s  
-= 120 GB/s  
-**Bandwidth : 120GB/s**  
+7500 MT/s × 128 bits ÷ 8
+= 7500 × 16 bytes
+= 120 000 MB/s
+= 120 GB/s
+**Bandwidth : 120GB/s**
 
 ##### **Theoretical Ceiling:**
 
