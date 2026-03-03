@@ -1,6 +1,6 @@
 ---
 title: Impact of hardware on Local hosted LLM
-date: 2025-05-11T23:23:00.000Z
+date: 2026-03-04
 thumbnail: pexels-pixabay-256112.jpg
 summary: Concrete analysis on consumer grade hardware (no GPU & AMD APU)
 ---
