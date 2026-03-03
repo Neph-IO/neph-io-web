@@ -67,8 +67,17 @@ pagination.pagerSize = 5
 
 [markup]
   [markup.goldmark]
+    [markup.goldmark.extensions]
+      passthrough = true
+
     [markup.goldmark.renderer]
       unsafe = true
+
+  [markup.goldmark.extensions.passthrough]
+    enable = true
+    [markup.goldmark.extensions.passthrough.delimiters]
+      inline = [["$", "$"], ["\\(", "\\)"]]
+      block  = [["$$", "$$"], ["\\[", "\\]"]]
 
 [params.twitter]
   # set Twitter handles for Twitter cards
