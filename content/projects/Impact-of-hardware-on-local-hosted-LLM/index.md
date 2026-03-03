@@ -15,20 +15,19 @@ AMD Ryzen™ AI 9 HX 370 | Radeon 890M
 
 >Model used Unsloth/Qwen3.5-9B-UD-Q4_K_XL.gguf
 
-###### Maximum token available.
+##### Maximum token available.
 
 32GB of ram : 4channel of 8GB in 32bits
 
 real bandwidth:
 
-7500 MT/s × 128 bits ÷ 8
-= 7500 × 16 bytes
-= 120 000 MB/s
-= 120 GB/s
+7500 MT/s × 128 bits ÷ 8  
+= 7500 × 16 bytes  
+= 120 000 MB/s  
+= 120 GB/s  
+**Bandwidth : 120GB/s**  
 
-**Bandwidth : 120GB/s**
-
-###### Theoric Ceiling:
+##### **Theoretical Ceiling:**
 
 Weight calculation based on:
 
