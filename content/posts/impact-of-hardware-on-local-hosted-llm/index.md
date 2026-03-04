@@ -1,6 +1,6 @@
 ---
 title: Impact of hardware on Local hosted LLM
-date: 2026-03-04
+date: 2026-03-03
 thumbnail: pexels-pixabay-256112.jpg
 thumbpage: true
 summary: Concrete analysis on consumer grade hardware (no GPU & AMD APU)
@@ -37,9 +37,7 @@ real bandwidth:
 Weight calculation based on:
 
 - \*\*FP16\*\* ≈ 2.0 bytes/param
-
 - \*\*INT8\*\* ≈ 1.0 byte/param
-
 - \*\*Q4\*\* ≈ 0.5 byte/param
 
 $$
