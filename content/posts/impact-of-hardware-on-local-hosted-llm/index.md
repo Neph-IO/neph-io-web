@@ -25,7 +25,7 @@ real bandwidth:
 = 120 000 MB/s
 = 120 GB/s
 
-**Bandwidth : 120GB/s**
+<mark>Bandwidth : 120GB/s</mark>
 
 ###### Theoric Ceiling:
 
@@ -52,7 +52,7 @@ $$
 Mtok/s = \frac{120}{4.5}= 26\text{ MTok/s}
 $$
 
-**Constated Output: 14Tok/s**
+**<mark>Constated Output: 14Tok/s</mark>**
 
 There is then a significant discrepency between _Mtoks/s_ and _Real Token/s_
 
@@ -77,6 +77,5 @@ $$
 KV cache stored in memory by the LLM during tokenization to assign a Key (K) and a Value (V).
 To generate the next token, the model refers back to these stored K/V values instead of recomputing the entire context.
 Accessing the cache is significantly faster than recalculating the full attention over all previous tokens.
-
 
 The cache size is defined at model initialization (boot time).
