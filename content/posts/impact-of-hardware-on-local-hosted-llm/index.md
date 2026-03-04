@@ -6,8 +6,6 @@ thumbpage: true
 summary: Concrete analysis on consumer grade hardware (no GPU & AMD APU)
 ---
 
-# Generation de réponse
-
 ### Hardware
 
 GMK-TEK EVO-X1 AI Mini  
