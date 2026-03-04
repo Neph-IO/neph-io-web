@@ -42,8 +42,9 @@ $$
 \text{Weight size} ≈ params × bytes/param
 $$
 
->Exemple model is 9B param  
-$$ Weight Size:9x10⁹x05=4.5GB$$
+>Exemple model is 9B param
+
+$$ Weight Size:9x10⁹x05=4.5GB $$
 
 Then we calculate the maximum token per seconds *Mtok/s*
 $$
@@ -51,6 +52,7 @@ MTok/s = \frac{\text {bandwidth GB/s} }{ \text{weight size GB}}
 $$
 
 >On GMKtek:
+
 $$
 Mtok/s = \frac{120}{4.5}= 26\text{ MTok/s}
 $$
