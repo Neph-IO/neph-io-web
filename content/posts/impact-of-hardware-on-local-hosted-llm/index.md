@@ -8,9 +8,9 @@ summary: Concrete analysis on consumer grade hardware (no GPU & AMD APU)
 
 ### Hardware
 
-GMK-TEK EVO-X1 AI Mini
-AMD Ryzen™ AI 9 HX 370 | Radeon 890M
-32GB LPDDR5X 7000Mhz
+GMK-TEK EVO-X1 AI Mini  
+AMD Ryzen™ AI 9 HX 370 | Radeon 890M  
+32GB LPDDR5X 7000Mhz  
 
 >Model used Unsloth/Qwen3.5-9B-UD-Q4_K_XL.gguf
 
