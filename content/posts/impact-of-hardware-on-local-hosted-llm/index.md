@@ -8,9 +8,9 @@ summary: Concrete analysis on consumer grade hardware (no GPU & AMD APU)
 
 ### Hardware
 
-GMK-TEK EVO-X1 AI Mini
-AMD Ryzen™ AI 9 HX 370 | Radeon 890M
-32GB LPDDR5X 7000Mhz
+GMK-TEK EVO-X1 AI Mini  
+AMD Ryzen™ AI 9 HX 370 | Radeon 890M  
+32GB LPDDR5X 7000Mhz  
 
 >Model used Unsloth/Qwen3.5-9B-UD-Q4_K_XL.gguf
 
@@ -76,7 +76,6 @@ $$
 
 KV cache stored in memory by the LLM during tokenization to assign a Key (K) and a Value (V).
 To generate the next token, the model refers back to these stored K/V values instead of recomputing the entire context.
-
 
 Accessing the cache is significantly faster than recalculating the full attention over all previous tokens.
 
