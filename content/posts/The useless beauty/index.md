@@ -46,7 +46,7 @@ In the past, people seemed to care about creating beautiful public spaces when d
 If money is the only issue,  
 "Why should you pay twice as much for a guardrail?"  
 Because I believe the extra cost pays for beauty and a shared heritage.  
-It completely deprives us of public spaces—spaces paid for through local taxes and intended to be enjoyed by everyone.
+We end up completely deprived of public spaces—spaces paid for through local taxes and intended to be enjoyed by everyone.
 
 #### The broken windows Theory
 
