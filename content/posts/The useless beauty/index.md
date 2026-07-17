@@ -1,7 +1,7 @@
 ---
 title: The useless beauty
 date: 2026-06-17
-thumbnail: alissa-schilling-og82Vm9omwU-unsplash.jpg
+thumbnail: thumb.jpg
 summary: Is the beauty
 ---
 <mark>Disclaimer: This is a personal reflection, nothing more.</mark>
@@ -11,7 +11,7 @@ The useless beauty is the beauty that surrounds us every day because someone onc
 
 #### The old Street Lamps
 
-{{< figure src="StreetLamp.jpg" width="383" >}}
+<div style="display:flex; justify-content:center;"> <div style="width:50%;"> {{< figure src="StreetLamp.jpg" >}} </div> </div>
 
 
 We have all seen those old street lamps: not particularly bright, nor particularly tall.  
