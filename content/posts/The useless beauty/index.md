@@ -11,7 +11,7 @@ The useless beauty is the beauty that surrounds us every day because someone onc
 
 #### The old Street Lamps
 
-![[StreetLamp.jpg|383]]
+{{< figure src="StreetLamp.jpg" width="383" >}}
 
 
 We have all seen those old street lamps: not particularly bright, nor particularly tall.  
@@ -29,13 +29,11 @@ Here is another example from a city I used to live in:
 
 This is a beautiful city full of history, and if you ever go to southern France, it's a nice place to visit.
 
-| ![[vlad-hilitanu-6Qx2nRuKw1w-unsplash.jpg\|384]] | ![[alissa-schilling-og82Vm9omwU-unsplash.jpg\|385]] |
-| ------------------------------------------------ | --------------------------------------------------- |
-
+<div style="display:flex; gap:1rem; justify-content:center;"> {{< figure src="vlad-hilitanu-6Qx2nRuKw1w-unsplash.jpg" width="384" >}} {{< figure src="alissa-schilling-og82Vm9omwU-unsplash.jpg" width="385" >}} </div>
 
 Now let's look at the other side of this Roman aqueduct.
 
-![[rambarde-peyrou-montpellier-960x640.jpg]]
+{{< figure src="rambarde-peyrou-montpellier-960x640.jpg" width="960" >}}
 
 One thing should immediately catch your eye: the guardrail.
 Like the street lamps earlier, it does its job perfectly. It's cheap, easy to replace, and neutral.  
